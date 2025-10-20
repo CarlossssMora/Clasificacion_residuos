@@ -1,0 +1,51 @@
+# ============================================================
+# preprocess_hogsvm.py
+# ============================================================
+import cv2
+import os
+from redimensionar import make_square
+
+def preprocess_for_hogsvm(dataset_name, input_dir, output_root, size=224):
+    """
+    Preprocesa un dataset (TACO o TrashNet) para HOG+SVM.
+    Estructura final:
+        data_preprocessed/
+        └── dataset_name/
+            ├── cardboard/
+            ├── glass/
+            ├── metal/
+            ├── paper/
+            ├── plastic/
+            └── trash/
+    """
+    output_dir = os.path.join(output_root, dataset_name)
+    os.makedirs(output_dir, exist_ok=True)
+    clases = ["cardboard", "glass", "metal", "paper", "plastic", "trash"]
+
+    for clase in clases:
+        clase_in = os.path.join(input_dir, clase)
+        clase_out = os.path.join(output_dir, clase)
+        os.makedirs(clase_out, exist_ok=True)
+
+        contador = 0
+        for nombre in os.listdir(clase_in):
+            if not nombre.lower().endswith(('.jpg', '.jpeg', '.png')):
+                continue
+
+            ruta = os.path.join(clase_in, nombre)
+            try:
+                img = cv2.imread(ruta)
+                if img is None:
+                    continue
+
+                img_square = make_square(img, desired_size=size)
+                gray = cv2.cvtColor(img_square, cv2.COLOR_BGR2GRAY)
+
+                nombre_salida = f"{clase}_{contador:05d}.jpg"
+                cv2.imwrite(os.path.join(clase_out, nombre_salida), gray)
+                contador += 1
+            except Exception as e:
+                print(f"Error procesando {ruta}: {e}")
+
+        print(f"[{dataset_name}] {clase}: {contador} imágenes procesadas.")
+    print(f"\nHOG+SVM ({dataset_name}) completado en: {output_dir}")
