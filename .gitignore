@@ -1,0 +1,10 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# Modelos entrenados
+*.pth
+Modelos/
+Modelos2/
+
+# Temporales
+__pycache__/
