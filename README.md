@@ -67,7 +67,42 @@ Para poder realizar la ejecución de los programas en el orden correcto, es impo
 1. Desde Jupyter, abrir la carpeta "3_HOG_SVM" y abrir el primer notebook "S0_S1" y ejecutar los bloques de código, estos bloques corresponden a los escenarios 1 y 2.
 2. Abrir el segundo notebook "S2_S3_GD" y ejecutar los bloques de código, estos bloques corresponden a los escenarios 3 y 4 utilizando Grid Search para encontrar los mejores parámteros.
 
+### 4. ResNet
+1. De igual forma, desde Jupyter Notebook abrir la carpeta "4_ResNet" y abrir el primer notebook "ResNet_S0" y ajustar la ruta a su ruta local y ejecutar los bloques de codigo.
+   ```python
+    data_dir = r"ruta_local\Clasificacion_residuos"
+   ```
+   Este notebook corresponde al primer escenario sin data augmentation y con data augmentation.
+2. Abrir el segundo notebook "ResNet_S1" y de igual forma ajustar la ruta a la ruta local y ejecutar los bloques de código.
+   ```python
+    data_dir = r"ruta_local\Clasificacion_residuos\data_preprocessed\ResNet18\TACO"
+   ```
+   Este notebook corresponde al escenario 2 sin data augmentation y con data augmentation.
+3. Abrir el tercer notebook "ResNet_S2" y de igual forma ajustar la ruta a la ruta local y ejecutar los bloques de código.
+   ```python
+    trashnet_dir = r"ruta_local\Clasificacion_residuos\data_preprocessed\ResNet18\TrashNet"
+    taco_dir     = r"ruta_local\Clasificacion_residuos\data_preprocessed\ResNet18\TACO"
+    output_dir = r"ruta_local\Clasificacion_residuos\Programas\ResNet\Modelos_experimentos"
+   ```
+   En el último bloque ajustar la ruta a la local para el guardado de el hisotirial de exactitud y pérdida
+   ```python
+    salida = r"ruta_local\Clasificacion_residuos\Programas\ResNet\Historial"
+   ```
+   Este notebook corresponde al tercer escenario sin data augmentation y con data augmentation.
+   
+4. Abrir el tercer notebook "ResNet_S3" y de igual forma ajustar la ruta a la ruta local y ejecutar los bloques de código.
+   ```python
+    trashnet_dir = r"ruta_local\Clasificacion_residuos\data_preprocessed\ResNet18\TrashNet"
+    taco_dir     = r"ruta_local\Clasificacion_residuos\data_preprocessed\ResNet18\TACO"
+    output_dir = r"ruta_local\Clasificacion_residuos\Programas\ResNet\Modelos_experimentos"
+   ```
+   En el último bloque ajustar la ruta a la local para el guardado de el hisotirial de exactitud y pérdida
+   ```python
+    salida = r"ruta_local\Clasificacion_residuos\Programas\ResNet\Historial"
+   ```
+   Este notebook corresponde al cuarto escenario sin data augmentation y con data augmentation.
 
+   
 ---
 ## Autores
 * Samuel Soriano Chávez
