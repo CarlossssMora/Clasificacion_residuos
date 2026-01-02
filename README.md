@@ -53,6 +53,19 @@ Finalmente, el desempeño de los modelos fue evaluado utilizando métricas clás
 
 ---
 ## Orden de ejecución
+Para poder realizar la ejecución de los programas en el orden correcto, es importamte contar con los conjuntos de datos utilizados en este proyecto dentro de la carpeta base del proyecto y en carpetas separadas, una para TrashNet y otra para TACO, cada una con subcarpetas que contiene las imagenes clasificadas en las 6 categorías (papel, cartón, vidrio, plástico, metal y basura). El repositorio ya cuenta con los dos conjuntos de datos preprocesados y listos para ser utilizados en la carpeta "data_preprocessed" por lo que los pasos 1 y 2 que se presentan a continuación solo se deben ejecutar en el caso de que se descargue los conjuntos de datos desde los links que se proporcionaron en la parte de Dataset utilizado.
+
+### 1. Extracción
+1. Abrir la carpeta 1_Extracción que se encuentra dentro de la parpeta de Programas y ejecutar el primer código llamado 1_recorte, que se encarga de recortar las áreas de interés en las imagenes del conjunto de datos de TACO.
+2. Ejecutar el segundo código 2_duplicados que se encarga de identificar si hay imagenes duplicadas en el conjunto de datos.
+3. Ejecutar el tercer código 3_eliminar_duplicados, que elimina todas las imagenes que estén duplicadas en el conjunto de datos.
+
+### 2. Preprocesamiento
+1. Abrir la carpeta 2_Preprocesamiento en donde se se encontrarán 4 códigos de Python el código "redimensionar" se encarga de redimensionar todas las imagenes a medidas exactas de 224x224 pixeles y se importa en los códigos "preprocess_hog_svm" y "preprocess_resnet" que realizan todo el preprocesamiento que se describe en la metodología. A su vez estos dos códigos se imprtan en el código principal "preprocesar" que se encarga de ejecutar todo y realizar los preprocesamientos completos a los dos conjuntos de datos.
+
+### 3. HOG+SVM
+1. Desde Jupyter, abrir la carpeta "3_HOG_SVM" y abrir el primer notebook "S0_S1" y ejecutar los bloques de código, estos bloques corresponden a los escenarios 1 y 2.
+2. Abrir el segundo notebook "S2_S3_GD" y ejecutar los bloques de código, estos bloques corresponden a los escenarios 3 y 4 utilizando Grid Search para los parámteros.
 
 
 ---
