@@ -65,7 +65,7 @@ Para poder realizar la ejecución de los programas en el orden correcto, es impo
 
 ### 3. HOG+SVM
 1. Desde Jupyter, abrir la carpeta "3_HOG_SVM" y abrir el primer notebook "S0_S1" y ejecutar los bloques de código, estos bloques corresponden a los escenarios 1 y 2.
-2. Abrir el segundo notebook "S2_S3_GD" y ejecutar los bloques de código, estos bloques corresponden a los escenarios 3 y 4 utilizando Grid Search para los parámteros.
+2. Abrir el segundo notebook "S2_S3_GD" y ejecutar los bloques de código, estos bloques corresponden a los escenarios 3 y 4 utilizando Grid Search para encontrar los mejores parámteros.
 
 
 ---
